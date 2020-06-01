@@ -1,0 +1,24 @@
+# IFTTT program
+
+  
+#define temp_sensor = A0;
+#define HUMIDITY_LEVEL_THRESHOLD 900 
+
+void setup() {
+ 
+} 
+
+void loop() { 
+    
+ 
+   int water =  random(8, 10) * 200; 
+   
+   if (water >= HUMIDITY_LEVEL_THRESHOLD) { 
+       Particle.publish("water is on", "plants safe"); 
+       delay(3000);
+       
+   } else { 
+       Particle.publish("no water"); 
+       delay(3000);
+   } 
+}
